@@ -9,6 +9,8 @@ switch ($_POST['formulario']) {
     case "cadastroInicial":
         cadastroInicial();
         break;
+    case "alterarDadosCadastrais":
+        alterarDadosCadastrais();
     default:
         header('Location: ../index.php');
 }
@@ -42,4 +44,8 @@ function cadastroInicial() {
     } else {
         echo "<script>alert('Cadastrado com sucesso. Entre no sistema para continuar.'); window.location.href='../view/login.php'; </script>";
     }
+}
+
+function alterarDadosCadastrais() {
+    
 }
