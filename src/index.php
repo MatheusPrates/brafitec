@@ -1,2 +1,4 @@
-<a href="view/salvarcliente.php">Cadastrar Cliente<a>
-
+<!--<a href="view/homepage.php">Cadastrar Cliente</a>-->
+<?php
+header("Location:view/homepage.php");
+?>
