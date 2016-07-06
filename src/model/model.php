@@ -37,6 +37,67 @@ class Model {
             return FALSE;
         }
     }
+    public function visualizaPessoaResponsavel($responsavel,$enderecoresponsavel,$complementoresponsavel ,$cepresponsavel, $numcasaresponsavel, $bairroresponsavel, $cidaderesponsavel,
+                                               $paisresponsavel, $telfixoresponsavel, $celularresponsavel, $nacionalidaderesponsavel, $identidaderesponsavel, $orgexpedidorresponsavel
+                                               , $cpfresponsavel, $datanascimentoresponsavel) {
+
+        $database = "host=localhost port=5432 user=postgres password=postgres dbname=brafitec";
+        $connection = pg_connect($database);
+
+        if ($connection) {
+             $sql = "INSERT INTO pessoa (numero,nome,endereco,bairro,cidade,pais,telefonefixo,celular,nacionalidade,rg,orgaoexpedidor,cpfdapessoa,datanascimento,complemento,cep) "
+                    . "VALUES( " . $numcasaresponsavel. ",'" . $responsavel . "','" . $enderecoresponsavel ."','" . $bairroresponsavel . "','" . $cidaderesponsavel . "','"
+                    . $paisresponsavel . "'," . $telfixoresponsavel . "," . $celularresponsavel . ",'" . $nacionalidaderesponsavel 
+                    . "'," . $identidaderesponsavel . ",'" . $orgexpedidorresponsavel . "'," . $cpfresponsavel . ",'" . $datanascimentoresponsavel . "','".$complementoresponsavel."',".$cepresponsavel.")";
+
+            $result = pg_query($sql);
+            
+            
+              return $result;
+        } 
+        else {
+             return FALSE;
+        }
+            }
+        
+        public function updateirmaos ($login,$qtdirmaos,$qtdirmaospuc){
+            
+            
+        $database = "host=localhost port=5432 user=postgres password=postgres dbname=brafitec";
+        $connection = pg_connect($database);
+        
+        
+        if ($connection) {
+            $sql =  "UPDATE TABLE aluno SET qtdirmaos = $qtdirmaos,qtdirmaospuc = $qtdirmaospuc WHERE matricula = $login" ; 
+            
+             $result = pg_query($sql);
+             return $result;
+        }
+        else {
+             return FALSE;
+        }
+            
+        }
+        
+    public function visualizaReponsavel($login,$nome,$identidaderesponsavel,$cpfresponsavel)
+    {
+        $database = "host=localhost port=5432 user=postgres password=postgres dbname=brafitec";
+        $connection = pg_connect($database);
+        
+        if ($connection) {
+            $sql = "INSERT INTO responsavel (matricula,nome,identidade,cpfresponsavel)"
+                    ."VALUES( " .$login. ",'" .$nome. "',".$identidaderesponsavel.",".$cpfresponsavel.")";
+           
+            $result = pg_query($sql);
+            return $result;
+        }
+        
+        else {
+             return FALSE;
+        }
+        
+    }
+
 
     public function novaAutenticacao($matr, $senha) {
         $database = "host=localhost port=5432 user=postgres password=postgres dbname=brafitec";

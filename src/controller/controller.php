@@ -161,3 +161,42 @@ function alterarDadosCadastrais() {
         echo "<script>alert('Cadastrado com sucesso. Entre no sistema para continuar.'); window.location.href='../view/login.php'; </script>";
     }
 }
+
+function alterarDadosFiliacao(){
+
+    $model = new Model();
+    $responsavel= $_POST['responsavel'];
+    $nacionalidaderesponsavel = $_POST['nacionalidaderesponsavel'];
+    $profissaoresponsavel = $_POST['profissaoresponsavel'];
+    $enderecoresponsavel = $_POST['enderecoresponsavel'];
+    $numcasaresponsavel = $_POST['numcasaresponsavel'];
+    $complementoresponsavel = $_POST['complementoresponsavel'];
+    $bairroresponsavel = $_POST['bairroresponsavel'];
+    $cidaderesponsavel = $_POST['cidaderesponsavel'];
+    $cepresponsavel = $_POST['cepresponsavel'];
+    $paisresponsavel = $_POST['paisresponsavel'];
+    $estadocivilresponsavel = $_POST['estadocivilresponsavel'];
+    $telefoneresponsavel = $_POST['telefoneresponsavel'];
+    $celularresponsavel = $_POST['celularresponsavel'];
+    $cpfresponsavel = $_POST['cpfresponsavel'];
+    $identidaderesponsavel = $_POST['identidaderesponsavel'];
+    $orgaoexpedidorresponsavel = $_POST['orgaoexpedidorresponsavel'];
+    $datanascimentoresponsavel = $_POST['datanascimentoresponsavel'];
+    $qtdirmaos = $_POST['qtdirmaos'];
+    $qtdirmaospuc = $_POST ['qtdirmaospuc'];
+    
+    $login = 1413200;
+    
+    $resultado1 = $model->visualizaPessoaResponsavel($responsavel, $enderecoresponsavel, $complementoresponsavel, $cepresponsavel, $numcasaresponsavel, 
+                                                     $bairroresponsavel, $cidaderesponsavel, $paisresponsavel, $telefoneresponsavel, $celularresponsavel, $nacionalidaderesponsavel, $identidaderesponsavel, 
+                                                     $orgaoexpedidorresponsavel, $cpfresponsavel, $datanascimentoresponsavel);
+   
+    //$resultado2 = $model->updateirmaos($login,$qtdirmaos,$qtdirmaospuc); 
+    $resultado3 = $model->visualizaReponsavel($login, $responsavel, $identidaderesponsavel, $cpfresponsavel);
+    
+    if((!$resultado1) && (!$resultado3)){
+        echo "<script>alert('Ocorreu algum erro no cadastro. Por favor tentar novamente mais tarde.');window.location.href='../view/homepage.php';  </script>";
+    } else {
+        echo "<script>alert('Cadastrado com sucesso. Entre no sistema para continuar.'); window.location.href='../view/login.php'; </script>";  
+    } 
+}
