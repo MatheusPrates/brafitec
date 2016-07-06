@@ -20,16 +20,16 @@ class Model {
         }
     }
 
-    public function visualizaPessoa($nome, $login, $endereço, $numcasa, $bairro, $cidade, $pais, $telfixo, $celular, $nacionalidade, $identidade, $orgexpeditor, $cpf, $datanascimento, $estadocivil, $numfilhos, $email) {
+    public function visualizaPessoa($nome, $endereço,$complemento,$cep, $numcasa, $bairro, $cidade, $pais, $telfixo, $celular, $nacionalidade, $identidade, $orgexpeditor, $cpf, $datanascimento) {
 
         $database = "host=localhost port=5432 user=postgres password=postgres dbname=brafitec";
         $connection = pg_connect($database);
 
         if ($connection) {
-            $sql = "INSERT INTO pessoa (nome,login,endereço,numcasa,bairro,cidade,pais,telfixo,celular,nacionalidade,identidade,orgexpeditor,cpf,datanascimento,estadocivil,numfilhos,email) "
-                    . "VALUES( " . $login . ",'" . $nome . "','" . $endereço . "'," . $numcasa . ",'" . $bairro . "','" . $cidade . "','"
-                    . $pais . "'," . $telfixo . "," . $celular . ",'" . $nacionalidade . "'," . $identidade . ",'" . $orgexpeditor . "'," . $cpf . "," . $datanascimento . ",'"
-                    . $estadocivil . "'," . $numfilhos . ",'" . $email . ")";
+            $sql = "INSERT INTO pessoa (numero,nome,endereco,bairro,cidade,pais,telefonefixo,celular,nacionalidade,rg,orgaoexpedidor,cpfdapessoa,datanascimento,complemento,cep) "
+                    . "VALUES( " . $numcasa. ",'" . $nome . "','" . $endereço ."','" . $bairro . "','" . $cidade . "','"
+                    . $pais . "'," . $telfixo . "," . $celular . ",'" . $nacionalidade . "'," . $identidade . ",'" . $orgexpeditor . "'," . $cpf . ",'" . $datanascimento . "','"
+                    .$complemento."',".$cep.")";
 
             $result = pg_query($sql);
             // return $result;
