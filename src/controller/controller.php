@@ -9,8 +9,9 @@ switch ($_POST['formulario']) {
     case "cadastroInicial":
         cadastroInicial();
         break;
-    case "alterarDadosCadastrais":
+    case "AlterarDadosPessoais":
         alterarDadosCadastrais();
+        break;
     default:
         header('Location: ../index.php');
 }
@@ -66,15 +67,12 @@ function alterarDadosCadastrais() {
     $estadocivil = $_POST['estadocivil'];
     $numfilhos = $_POST['numfilhos'];
     $email = $_POST['email'];
-    
-    
-    $resultado = $model->visualizaPessoa($nome,$login,$endereço,$numcasa,$complemento,$bairro,$cidade,$pais,$telfixo,$celular,$nacionalidade,$identidade,$orgexpeditor,$cpf,$datanascimento,
-            $estadocivil,$numfilhos,$email);
+
+
+    $resultado = $model->visualizaPessoa($nome, $login, $endereço, $numcasa, $complemento, $bairro, $cidade, $pais, $telfixo, $celular, $nacionalidade, $identidade, $orgexpeditor, $cpf, $datanascimento, $estadocivil, $numfilhos, $email);
     if (!$resultado) {
         echo "<script>alert('Ocorreu algum erro no cadastro. Por favor tentar novamente mais tarde.');window.location.href='../view/homepage.php';  </script>";
     } else {
         echo "<script>alert('Cadastrado com sucesso. Entre no sistema para continuar.'); window.location.href='../view/login.php'; </script>";
     }
-    
-    
 }

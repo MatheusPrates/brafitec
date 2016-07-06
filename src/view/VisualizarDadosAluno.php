@@ -29,7 +29,7 @@
                             <label for="name" class="control-label">Nome*: </label>
                             <input type="text" style="width:15%;margin-left:10px" class="form-control" name="nome">
                             <label for="login" style="padding-left:10px" class="control-label">Matrícula*: </label>
-                            <input type="text" style="width:15%;margin-left:10px" class="form-control" name="login" readonly>
+                            <input type="text" style="width:15%;margin-left:10px" class="form-control" name="login" readonly value="1413276">
                             <label for="endereço" class="control-label">Endereço*: </label>
                             <input type="text" style="width:15%;margin-left:10px" class="form-control" name="endereço">
                             <label for="Número da casa" class="control-label">Número*: </label>
@@ -87,7 +87,7 @@
                                             </div>
                                             <div style="margin-top:1%">
                                                 <div class="row form-inline">
-                                                    <input type="hidden" name="formulario" value="AlterarDadosPessoais">
+                                                    <input type="hidden" name="formulario" value="AlterarDadosPessoais" />
                                                     <button type="submit" class="btn btn-success">Alterar</button>
                                                     <button class="btn btn-danger">Voltar</button>
                                                 </div>
