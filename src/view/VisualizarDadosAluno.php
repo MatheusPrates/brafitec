@@ -69,7 +69,7 @@
                                     <div style="margin-top:1%">
                                         <div class="row form-inline">
                                             <label for="Data de nascimento" class="control-label">Data de nascimento*: </label>
-                                            <input type="text" style="width:15%;margin-left:10px" class="form-control" name="datanascimento">
+                                            <input type="text" style="width:15%;margin-left:10px" placeholder="Ex: dd/mm/aaaa" class="form-control" name="datanascimento">
                                             <label for="Estado civil" class="control-label">Estado civil*: </label>
                                             <select style="margin-top:10px" class="report-select user-success" name="estadocivil">
                                                 <option value="solteiro">Solteiro</option>

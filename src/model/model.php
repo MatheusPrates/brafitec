@@ -20,21 +20,35 @@ class Model {
         }
     }
 
-    public function visualizaPessoa($nome, $endereço,$complemento,$cep, $numcasa, $bairro, $cidade, $pais, $telfixo, $celular, $nacionalidade, $identidade, $orgexpeditor, $cpf, $datanascimento) {
+    public function visualizaPessoa($nome, $endereço, $complemento, $cep, $numcasa, $bairro, $cidade, $pais, $telfixo, $celular, $nacionalidade, $identidade, $orgexpeditor, $cpf, $datanascimento) {
 
         $database = "host=localhost port=5432 user=postgres password=postgres dbname=brafitec";
         $connection = pg_connect($database);
 
         if ($connection) {
             $sql = "INSERT INTO pessoa (numero,nome,endereco,bairro,cidade,pais,telefonefixo,celular,nacionalidade,rg,orgaoexpedidor,cpfdapessoa,datanascimento,complemento,cep) "
-                    . "VALUES( " . $numcasa. ",'" . $nome . "','" . $endereço ."','" . $bairro . "','" . $cidade . "','"
+                    . "VALUES( " . $numcasa . ",'" . $nome . "','" . $endereço . "','" . $bairro . "','" . $cidade . "','"
                     . $pais . "'," . $telfixo . "," . $celular . ",'" . $nacionalidade . "'," . $identidade . ",'" . $orgexpeditor . "'," . $cpf . ",'" . $datanascimento . "','"
-                    .$complemento."',".$cep.")";
+                    . $complemento . "'," . $cep . ")";
 
             $result = pg_query($sql);
-            // return $result;
+            return $result;
         } else {
-            // return FALSE;
+            return FALSE;
+        }
+    }
+
+    public function novaAutenticacao($matr, $senha) {
+        $database = "host=localhost port=5432 user=postgres password=postgres dbname=brafitec";
+        $connection = pg_connect($database);
+
+        if ($connection) {
+            $sql = "INSERT INTO autenticacao_aluno (matricula,senha) VALUES (" . $matr . ",'" . md5($senha) . "')";
+            echo $sql;
+            $result = pg_query($sql);
+            return $result;
+        } else {
+            return FALSE;
         }
     }
 
