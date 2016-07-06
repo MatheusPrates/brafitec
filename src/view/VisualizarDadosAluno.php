@@ -27,63 +27,63 @@
                     <form action="../controller/controller.php" method="post">
                         <div class="row form-inline">
                             <label for="name" class="control-label">Nome*: </label>
-                            <input type="text" style="width:15%;margin-left:10px" class="form-control" value="Matheus Suknaic">
+                            <input type="text" style="width:15%;margin-left:10px" class="form-control" name="nome">
                             <label for="login" style="padding-left:10px" class="control-label">Matrícula*: </label>
-                            <input type="text" style="width:15%;margin-left:10px" class="form-control" value="1413200" readonly>
+                            <input type="text" style="width:15%;margin-left:10px" class="form-control" name="login" readonly>
                             <label for="endereço" class="control-label">Endereço*: </label>
-                            <input type="text" style="width:15%;margin-left:10px" class="form-control" value="Rua dos Bobos">
+                            <input type="text" style="width:15%;margin-left:10px" class="form-control" name="endereço">
                             <label for="Número da casa" class="control-label">Número*: </label>
-                            <input type="text" style="width:15%;margin-left:10px" class="form-control" value="0">
+                            <input type="text" style="width:15%;margin-left:10px" class="form-control" name="numcasa">
                         </div>
                         <div style="margin-top:1%">
                             <div class="row form-inline">
-                                <label for="Número da casa" class="control-label">Complemento: </label>
-                                <input type="text" style="width:15%;margin-left:10px" class="form-control" value="Qualquer coisa">
+                                <label for="Complemento" class="control-label">Complemento: </label>
+                                <input type="text" style="width:15%;margin-left:10px" class="form-control" name="complemento">
                                 <label for="bairro" class="control-label">Bairro*: </label>
-                                <input type="text" style="width:15%;margin-left:10px" class="form-control" value="Tijuca">
+                                <input type="text" style="width:15%;margin-left:10px" class="form-control" name="bairro">
                                 <label for="cidade" class="control-label">Cidade*: </label>
-                                <input type="text" style="width:15%;margin-left:10px" class="form-control" value="Rio de Janeiro">
+                                <input type="text" style="width:15%;margin-left:10px" class="form-control" name="cidade">
                                 <label for="CEP" class="control-label">CEP*: </label>
-                                <input type="text" style="width:15%;margin-left:10px" class="form-control" value="20543-000">
+                                <input type="text" style="width:15%;margin-left:10px" class="form-control" name="cep">
                             </div>
                             <div style="margin-top:1%">
                                 <div class="row form-inline">
                                     <label for="País" class="control-label">País*: </label>
-                                    <input type="text" style="width:15%;margin-left:10px" class="form-control" value="Brasil">
+                                    <input type="text" style="width:15%;margin-left:10px" class="form-control" name="pais">
                                     <label for="Telefone fixo" class="control-label">Telefone fixo*: </label>
-                                    <input type="text" style="width:15%;margin-left:10px" class="form-control" value="22649117">
+                                    <input type="text" style="width:15%;margin-left:10px" class="form-control" name="telfixo">
                                     <label for="Celular" class="control-label">Celular*: </label>
-                                    <input type="text" style="width:15%;margin-left:10px" class="form-control" value="9101055">
+                                    <input type="text" style="width:15%;margin-left:10px" class="form-control" name="celular">
                                     <label for="Nacionalidade" class="control-label">Nacionalidade*: </label>
-                                    <input type="text" style="width:15%;margin-left:10px" class="form-control" value="Americano">
+                                    <input type="text" style="width:15%;margin-left:10px" class="form-control" name="nacionalidade">
                                 </div>
                                 <div style="margin-top:1%">
                                     <div class="row form-inline">
                                         <label for="Identidade" class="control-label">Identidade*: </label>
-                                        <input type="text" style="width:15%;margin-left:10px" class="form-control" value="123456789">
+                                        <input type="text" style="width:15%;margin-left:10px" class="form-control" name="identidade">
                                         <label for="Órgão expedidor" class="control-label">Órgão expedidor*: </label>
-                                        <input type="text" style="width:15%;margin-left:10px" class="form-control" value="DENTRAN">
+                                        <input type="text" style="width:15%;margin-left:10px" class="form-control" name="orgexpeditor">
                                         <label for="CPF" class="control-label">CPF*: </label>
-                                        <input type="text" style="width:15%;margin-left:10px" class="form-control" value="12345678910">
+                                        <input type="text" style="width:15%;margin-left:10px" class="form-control" name="cpf">
                                     </div>
                                     <div style="margin-top:1%">
                                         <div class="row form-inline">
                                             <label for="Data de nascimento" class="control-label">Data de nascimento*: </label>
-                                            <input type="text" style="width:15%;margin-left:10px" class="form-control" value="23/04/1996">
+                                            <input type="text" style="width:15%;margin-left:10px" class="form-control" name="datanascimento">
                                             <label for="Estado civil" class="control-label">Estado civil*: </label>
                                             <select style="margin-top:10px" class="report-select user-success" name="estadocivil">
                                                 <option value="solteiro">Solteiro</option>
-                                                <option>Casado</option>
-                                                <option>Viúvo</option>
-                                                <option>Divorciado</option>
+                                                <option value="casado">Casado</option>
+                                                <option value="viuvo">Viuvo</option>
+                                                <option value="divorciado">Divorciado</option>
                                             </select>
                                         </div>
                                         <div style="margin-top:1%">
                                             <div class="row form-inline">
                                                 <label for="Número de filhos" class="control-label">Filhos*: </label>
-                                                <input type="text" style="width:15%;margin-left:10px" class="form-control" value="0">
+                                                <input type="text" style="width:15%;margin-left:10px" class="form-control" name="numfilhos">
                                                 <label for="email" class="control-label">Email*: </label>
-                                                <input type="text" style="width:15%;margin-left:10px" class="form-control" value="exemplo@gmail.com">
+                                                <input type="text" style="width:15%;margin-left:10px" class="form-control" name="email">
                                             </div>
                                             <div style="margin-top:1%">
                                                 <div class="row form-inline">

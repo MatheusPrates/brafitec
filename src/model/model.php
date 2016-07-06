@@ -21,5 +21,30 @@ class Model {
             return FALSE;
         }
     }
-
-}
+    
+     public function visualizaPessoa($nome, $login , $endereço, $numcasa, $bairro, $cidade, $pais, $telfixo, $celular, 
+                                    $nacionalidade,$identidade,$orgexpeditor,$cpf,$datanascimento,$estadocivil,$numfilhos,$email){
+         
+         $database = "host=localhost port=5432 user=postgres password=postgres dbname=brafitec";
+         $variables = array($nome, $login , $endereço, $numcasa, $bairro, $cidade, $pais, $telfixo, $celular, 
+                                    $nacionalidade,$identidade,$orgexpeditor,$cpf,$datanascimento,$estadocivil,$numfilhos,$email);
+         $prepared_var = implode(",", $variables);
+         $connection = pg_connect($database);
+         
+         if ($connection) {
+            $sql = "INSERT INTO pessoa (nome,login,endereço,numcasa,bairro,cidade,pais,telfixo,celular,nacionalidade,identidade,orgexpeditor,cpf,datanascimento,estadocivil,numfilhos,email) "
+                    . "VALUES( " . $login . ",'" . $nome . "','" . $endereço . "'," . $numcasa . ",'" . $bairro . "','" . $cidade . "','" 
+                    . $pais . "'," . $telfixo . "," . $celular . ",'" . $nacionalidade . "',".$identidade.",'".$orgexpeditor."',".$cpf.",".$datanascimento.",'"
+                    .$estadocivil."',".$numfilhos.",'".$email.")";
+            
+            $result = pg_query($sql);
+            return $result;
+         }
+         else{
+             return FALSE;
+         }
+         
+    }
+         
+     }
+            
